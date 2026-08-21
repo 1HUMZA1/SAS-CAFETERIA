@@ -388,7 +388,7 @@ ul {
 .menu-list li {
     display: flex;
     justify-content: space-between;
-    align-items: baseline;
+    align-items: center; /* Changed from baseline for image support */
     margin-bottom: 12px; /* Reduced from 18px */
     font-size: 1rem; /* Reduced from 1.15rem */
     font-weight: 600;
@@ -397,6 +397,21 @@ ul {
 .menu-list li.spacer {
     height: 15px;
     margin-bottom: 0;
+}
+
+.item-name-group {
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+}
+
+.item-thumb {
+    width: 35px;
+    height: 35px;
+    border-radius: 5px; /* Slight rounding */
+    object-fit: cover;
+    margin-right: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
 
 .item-name {
@@ -408,12 +423,16 @@ ul {
 .item-name::after {
     content: '';
     position: absolute;
-    bottom: 5px;
+    bottom: 0px; /* adjusted for center alignment */
     left: 0;
     right: 0;
     margin-left: 10px;
     border-bottom: 2px dotted rgba(196, 139, 98, 0.4);
     width: calc(100% - 15px);
+}
+
+.item-name-group .item-name::after {
+    bottom: 5px; /* specific offset when inside the group */
 }
 
 .item-price {
