@@ -506,11 +506,11 @@ ul {
 }
 
 .delay-1 {
-    animation-delay: 0.3s;
+    animation-delay: 1.8s; /* Wait for typing effect */
 }
 
 .delay-2 {
-    animation-delay: 0.6s;
+    animation-delay: 2.1s;
 }
 
 @keyframes fadeInUp {
