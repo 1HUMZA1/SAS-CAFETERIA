@@ -104,31 +104,11 @@ document.addEventListener('DOMContentLoaded', () => {
         // Event listeners for buttons
         nextBtn.addEventListener('click', () => {
             moveToNext();
-            resetAutoPlay();
         });
 
         prevBtn.addEventListener('click', () => {
             moveToPrev();
-            resetAutoPlay();
         });
-
-        // Auto play functionality
-        const startAutoPlay = () => {
-            autoPlayInterval = setInterval(moveToNext, 3500); // 3.5 seconds
-        };
-
-        const resetAutoPlay = () => {
-            clearInterval(autoPlayInterval);
-            startAutoPlay();
-        };
-
-        // Initialize auto play
-        startAutoPlay();
-        
-        // Pause on hover
-        const carouselWrapper = document.querySelector('.menu-carousel-wrapper');
-        carouselWrapper.addEventListener('mouseenter', () => clearInterval(autoPlayInterval));
-        carouselWrapper.addEventListener('mouseleave', startAutoPlay);
         
         // Handle window resize
         window.addEventListener('resize', updateCarousel);
