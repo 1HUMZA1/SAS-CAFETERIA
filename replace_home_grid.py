@@ -1,67 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SAS Cafeteria - Cravings Start Here</title>
-    <!-- Premium Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <!-- Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- CSS -->
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+import re
 
-    <!-- Header / Navbar -->
-    <header class="navbar">
-        <div class="container nav-container">
-            <div class="logo-group">
-                <a href="#home" class="logo">
-                    <img src="logo.png" alt="SAS Cafeteria Logo">
-                </a>
-                <div class="nav-socials">
-                    <a href="https://www.instagram.com/sas.cafeteria?igsh=MWZobGh6Ync2eGxtaw==" target="_blank" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
-                    <a href="https://maps.app.goo.gl/YJZCMaByvM5XZX7V7" target="_blank" title="Location"><i class="fa-solid fa-location-dot"></i></a>
-                </div>
-            </div>
-            <nav>
-                <ul class="nav-links">
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="menu.html">Menu</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+with open('index.html', 'r', encoding='utf-8') as f:
+    html = f.read()
 
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <video autoplay muted loop playsinline class="hero-video">
-            <source src="video/Generated Video August 22, 2026 - 1_31AM.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
-        <div class="hero-overlay"></div>
-        <div class="hero-content">
-            <div class="hero-text-block">
-                <h1><span id="typed-text"></span><span class="cursor"></span></h1>
-                <p class="animate-up delay-1">Cravings Start Here</p>
-                <a href="menu.html" class="btn animate-up delay-2">EXPLORE MENU</a>
-            </div>
-        </div>
-    </section>
+# Find the start of the menu carousel
+carousel_start = html.find('<div class="menu-carousel-wrapper fade-in">')
+# Find the end of it (right before </section> of #menu)
+carousel_end = html.find('</section>', carousel_start)
 
-    <!-- Menu Section -->
-    <section id="menu" class="menu-section">
-        <div class="container">
-            <div class="section-header fade-in">
-                <h2 class="section-title">Our Menu</h2>
-                <p class="section-subtitle">Premium Quality • Freshly Prepared • Best Ingredients • Made with Love</p>
-            </div>
-            
-            <div class="home-category-grid fade-in">
+# Define the new grid HTML
+new_grid = '''<div class="home-category-grid fade-in">
                 <!-- Card 1 -->
                 <a href="menu.html" class="home-cat-card">
                     <div class="home-cat-img" style="background-image: url('images/Ultra-realistic_premium_commer_16.jpg');"></div>
@@ -142,26 +90,11 @@
                     </div>
                 </a>
             </div>
-            </section>
+            '''
 
-    <!-- Contact / Footer Section -->
-    <footer id="contact" class="footer">
-        <div class="container footer-content fade-in">
-            <div class="footer-info">
-                <h3>SAS CAFETERIA</h3>
-                <p>Cravings Start Here.</p>
-            </div>
-            <div class="footer-contact">
-                <a href="tel:+918185050200" class="footer-link"><p><i class="fa-solid fa-phone"></i> 8185050200</p></a>
-                <a href="https://www.instagram.com/sas.cafeteria?igsh=MWZobGh6Ync2eGxtaw==" target="_blank" class="footer-link"><p><i class="fa-brands fa-instagram"></i> SAS.cafeteria</p></a>
-                <a href="https://maps.app.goo.gl/YJZCMaByvM5XZX7V7" target="_blank" class="footer-link"><p><i class="fa-solid fa-location-dot"></i> PURANI HAVELI</p></a>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2026 SAS CAFETERIA. All Rights Reserved.</p>
-        </div>
-    </footer>
+new_html = html[:carousel_start] + new_grid + html[carousel_end:]
 
-    <script src="script.js"></script>
-</body>
-</html>
+with open('index.html', 'w', encoding='utf-8') as f:
+    f.write(new_html)
+
+print("index.html rewritten successfully.")

@@ -261,6 +261,85 @@ ul {
     letter-spacing: 2px;
 }
 
+/* Home Category Grid */
+.home-category-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+    margin-top: 50px;
+    padding: 0 20px;
+}
+
+.home-cat-card {
+    background: #fff;
+    border-radius: 16px;
+    overflow: hidden;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 10px 30px rgba(59, 32, 20, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid rgba(196, 139, 98, 0.1);
+}
+
+.home-cat-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 40px rgba(59, 32, 20, 0.15);
+}
+
+.home-cat-img {
+    height: 220px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    border-bottom: 3px solid var(--accent-color);
+}
+
+.home-cat-content {
+    padding: 25px 20px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.home-cat-content h3 {
+    font-size: 1.4rem;
+    color: var(--primary-color);
+    margin-bottom: 8px;
+    font-family: var(--font-heading);
+    font-weight: 800;
+    letter-spacing: 0.5px;
+}
+
+.home-cat-content p {
+    font-size: 0.95rem;
+    color: #666;
+    margin-bottom: 20px;
+    flex-grow: 1;
+}
+
+.view-btn {
+    font-size: 0.9rem;
+    color: var(--accent-color);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    display: flex;
+    align-items: center;
+    transition: color 0.3s ease;
+}
+
+.view-btn i {
+    margin-left: 8px;
+    font-size: 1rem;
+    transition: transform 0.3s ease;
+}
+
+.home-cat-card:hover .view-btn i {
+    transform: translateX(5px);
+}
+
 .section-subtitle {
     font-size: 1rem;
     color: var(--accent-color);
@@ -771,25 +850,17 @@ ul {
         padding: 0 10px;
     }
 
-    /* Menu Carousel */
-    .menu-carousel-wrapper {
-        padding: 0 5px;
+    /* Menu Grid Mobile */
+    .home-category-grid {
+        grid-template-columns: 1fr; /* Stack vertically on small mobile */
+        gap: 20px;
+        padding: 0 10px;
     }
-    .menu-category {
-        min-width: 75vw; /* Fit within mobile screen */
-        max-width: 75vw;
-        padding: 20px 15px; /* Reduce padding so content doesn't get cut off */
-    }
-    .carousel-btn {
-        width: 35px;
-        height: 35px;
-        font-size: 1rem;
-    }
-    .prev-btn {
-        margin-right: 5px;
-    }
-    .next-btn {
-        margin-left: 5px;
+    
+    @media (min-width: 480px) and (max-width: 768px) {
+        .home-category-grid {
+            grid-template-columns: repeat(2, 1fr); /* 2 cols on tablets/large phones */
+        }
     }
     
     /* Typography inside cards */
