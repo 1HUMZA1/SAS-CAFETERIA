@@ -114,4 +114,25 @@ document.addEventListener('DOMContentLoaded', () => {
         window.addEventListener('resize', updateCarousel);
     }
 
+    // Dashboard Tabs Logic
+    const tabLinks = document.querySelectorAll('.tab-link');
+    const dashboardPanels = document.querySelectorAll('.dashboard-panel');
+
+    if (tabLinks.length > 0) {
+        tabLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                // Remove active class from all tabs and panels
+                tabLinks.forEach(t => t.classList.remove('active'));
+                dashboardPanels.forEach(p => p.classList.remove('active'));
+
+                // Add active class to clicked tab
+                link.classList.add('active');
+
+                // Show corresponding panel
+                const targetId = link.getAttribute('data-target');
+                document.getElementById(targetId).classList.add('active');
+            });
+        });
+    }
+
 });
