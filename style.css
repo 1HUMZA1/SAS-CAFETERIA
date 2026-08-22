@@ -263,6 +263,7 @@ ul {
 
 /* Featured Category Section (Home Page) */
 .featured-section-wrapper {
+    padding-top: 120px; /* Clear fixed navbar */
     padding-bottom: 80px;
 }
 
