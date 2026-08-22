@@ -42,47 +42,10 @@ ul {
     padding: 0 20px;
 }
 
-/* --- Ribbon Interface --- */
-.top-ribbon {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 40px;
-    background: var(--accent-color);
-    color: #fff;
-    display: flex;
-    align-items: center;
-    overflow: hidden;
-    z-index: 1001;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
-}
-
-.ribbon-content {
-    display: flex;
-    white-space: nowrap;
-    animation: scrollRibbon 20s linear infinite;
-}
-
-.ribbon-item {
-    font-size: 0.85rem;
-    font-weight: 700;
-    letter-spacing: 1px;
-    padding: 0 40px;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-}
-
-@keyframes scrollRibbon {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-50%); }
-}
-
-/* --- Header & Nav --- */
+/* Navbar */
 .navbar {
     position: fixed;
-    top: 40px; /* Pushed down for ribbon */
+    top: 0;
     left: 0;
     width: 100%;
     padding: 20px 0;
@@ -165,12 +128,12 @@ ul {
 
 /* Hero Section */
 .hero {
-    height: calc(100vh - 40px); /* Adjust for ribbon height */
-    margin-top: 40px; /* Space for ribbon */
     position: relative;
+    height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
+    text-align: center;
     overflow: hidden;
 }
 
@@ -201,6 +164,7 @@ ul {
     color: var(--text-light);
     z-index: 1;
     padding: 20px 40px; /* Reduced right padding to shift text further right */
+    margin-top: 100px; /* Push text down to make space for ribbons */
     width: 100%;
     display: flex;
     justify-content: flex-end; /* Push the block to the right */
