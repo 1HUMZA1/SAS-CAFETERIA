@@ -163,7 +163,7 @@ ul {
 .hero-content {
     color: var(--text-light);
     z-index: 1;
-    padding: 20px 80px;
+    padding: 20px 40px; /* Reduced right padding to shift text further right */
     width: 100%;
     display: flex;
     justify-content: flex-end; /* Push the block to the right */
@@ -178,7 +178,7 @@ ul {
 
 .hero-content h1 {
     font-family: 'Montserrat', sans-serif;
-    font-size: 4.5rem; /* Slightly larger */
+    font-size: 3.2rem; /* Reduced to avoid overlapping video subject */
     font-weight: 900;
     margin-bottom: 5px;
     letter-spacing: -1px; /* Tighter letter spacing */
@@ -188,9 +188,9 @@ ul {
 }
 
 .hero-content p {
-    font-size: 1.3rem; 
+    font-size: 1.15rem; /* Slightly smaller to match new h1 size */
     font-weight: 500;
-    margin-bottom: 35px;
+    margin-bottom: 25px;
     letter-spacing: 0.5px;
     text-shadow: 1px 1px 3px rgba(0,0,0,0.5); /* Softer shadow */
 }
@@ -922,13 +922,13 @@ ul {
         align-items: center;
     }
     .hero-content h1 {
-        font-size: 2.8rem;
+        font-size: 2.2rem;
         letter-spacing: 0px;
         text-align: center;
         display: block; /* Allows natural text wrapping */
     }
     .hero-content p {
-        font-size: 1.1rem;
+        font-size: 1rem;
         margin-bottom: 25px;
     }
     .btn {
