@@ -52,26 +52,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Start typing effect after a small delay
     if (typedTextSpan) setTimeout(type, 500);
 
-    // Typing Effect for Showcase Section
-    const descToType = "Experience the perfect swirl of rich, creamy soft serve made with real dairy and premium ingredients.";
-    const typedDescSpan = document.getElementById("typed-desc");
-    const descCursor = document.querySelector(".desc-cursor");
-    
-    let descCharIndex = 0;
-    
-    function typeDesc() {
-        if (descCharIndex < descToType.length) {
-            if(descCursor && !descCursor.classList.contains("typing")) descCursor.classList.add("typing");
-            if(typedDescSpan) typedDescSpan.textContent += descToType.charAt(descCharIndex);
-            descCharIndex++;
-            setTimeout(typeDesc, 30); // Faster typing speed for description
-        } else {
-            if(descCursor) descCursor.classList.remove("typing");
-        }
-    }
-    
-    // Start description typing effect after a longer delay (when user scrolls down ideally, or just delayed)
-    if (typedDescSpan) setTimeout(typeDesc, 1500);
+    // We handle the dynamic showcase typing effect inside the slider logic instead of here.
 
     // Dashboard Tabs Logic
     const tabLinks = document.querySelectorAll('.tab-link');
@@ -102,15 +83,46 @@ document.addEventListener('DOMContentLoaded', () => {
     let currentSlide = 0;
 
     if (slides.length > 0) {
+        let currentTypingTimeout;
+
         function showSlide(index) {
             slides.forEach(slide => slide.classList.remove('active'));
             indicators.forEach(ind => ind.classList.remove('active'));
             
-            slides[index].classList.add('active');
+            const activeSlide = slides[index];
+            activeSlide.classList.add('active');
             if(indicators.length > index) {
                 indicators[index].classList.add('active');
             }
+
+            // Trigger typing effect for the active slide
+            clearTimeout(currentTypingTimeout);
+            const typedSpan = activeSlide.querySelector('.typed-desc');
+            const cursor = activeSlide.querySelector('.desc-cursor');
+            
+            if (typedSpan && cursor) {
+                const textToType = typedSpan.getAttribute('data-text');
+                typedSpan.textContent = ''; // Reset text
+                let charIndex = 0;
+
+                function typeActiveDesc() {
+                    if (charIndex < textToType.length) {
+                        if (!cursor.classList.contains("typing")) cursor.classList.add("typing");
+                        typedSpan.textContent += textToType.charAt(charIndex);
+                        charIndex++;
+                        currentTypingTimeout = setTimeout(typeActiveDesc, 30);
+                    } else {
+                        cursor.classList.remove("typing");
+                    }
+                }
+                
+                // Small delay before typing starts after slide transition
+                currentTypingTimeout = setTimeout(typeActiveDesc, 400);
+            }
         }
+        
+        // Initialize the first slide's typing effect
+        showSlide(currentSlide);
 
         if (nextBtn) {
             nextBtn.addEventListener('click', () => {
