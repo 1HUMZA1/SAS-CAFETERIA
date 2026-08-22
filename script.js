@@ -135,4 +135,18 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // Featured Slider Logic
+    const featuredSlider = document.querySelector('.featured-slider');
+    const leftArrow = document.querySelector('.left-arrow');
+    const rightArrow = document.querySelector('.right-arrow');
+
+    if (featuredSlider && leftArrow && rightArrow) {
+        leftArrow.addEventListener('click', () => {
+            featuredSlider.scrollBy({ left: -140, behavior: 'smooth' });
+        });
+        rightArrow.addEventListener('click', () => {
+            featuredSlider.scrollBy({ left: 140, behavior: 'smooth' });
+        });
+    }
+
 });

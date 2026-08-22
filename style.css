@@ -317,13 +317,84 @@ ul {
     opacity: 0.95;
 }
 
-.featured-highlights {
-    list-style: none;
-    padding: 0;
-    margin: 0 0 40px 0;
-    display: inline-block;
-    text-align: left;
+.featured-slider-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+    padding: 0 30px;
 }
+
+.featured-slider {
+    display: flex;
+    gap: 15px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+    padding: 10px 0;
+}
+
+.featured-slider::-webkit-scrollbar {
+    display: none; /* Chrome, Safari and Opera */
+}
+
+.featured-slide {
+    flex: 0 0 120px;
+    background: #fff;
+    border-radius: 12px;
+    padding: 10px;
+    text-align: center;
+    color: var(--primary-color);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease;
+}
+
+.featured-slide:hover {
+    transform: translateY(-5px);
+}
+
+.featured-slide img {
+    width: 100%;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.featured-slide h4 {
+    font-size: 0.9rem;
+    margin-bottom: 5px;
+    font-weight: 700;
+}
+
+.featured-slide .price {
+    font-size: 1rem;
+    color: var(--accent-color);
+    font-weight: 800;
+}
+
+.slider-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255,255,255,0.2);
+    border: none;
+    color: #fff;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 2;
+    transition: background 0.3s ease;
+}
+
+.slider-arrow:hover {
+    background: var(--accent-color);
+}
+
+.left-arrow { left: 0; }
+.right-arrow { right: 0; }
 
 .featured-highlights li {
     font-size: 1.05rem;
