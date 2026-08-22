@@ -11,7 +11,7 @@
     <!-- Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Stylesheet -->
-    <link rel="stylesheet" href="style.css?v=6">
+    <link rel="stylesheet" href="style.css?v=7">
 </head>
 <body>
 
@@ -53,61 +53,122 @@
         </div>
     </section>
 
-    <!-- Featured Categories Section -->
-    <section id="menu" class="featured-section-wrapper">
-        <div class="section-header fade-in">
-            <h2 class="section-title">Our Specialties</h2>
-            <p class="section-subtitle">Premium Quality • Freshly Prepared • Best Ingredients • Made with Love</p>
-        </div>
-
-        <div class="featured-category-card fade-in" style="background-image: linear-gradient(rgba(26, 12, 6, 0.75), rgba(26, 12, 6, 0.85)), url('images/featured_icecream.jpg');">
-            <div class="container featured-content">
-                <div class="featured-text" style="margin: 0 auto; text-align: center;">
-                    <i class="fa-solid fa-ice-cream featured-icon"></i>
-                    <h2 class="featured-title">Signature Softy Ice Creams</h2>
-                    <p class="featured-desc">Experience the perfect swirl of rich, creamy soft serve made with real dairy and premium ingredients. Hand-crafted to melt your cravings away, whether you love classic twists or fully-loaded sundaes.</p>
-                    
-                    <div class="featured-interactive">
-                        <div class="featured-slider-container">
-                            <button class="slider-arrow left-arrow"><i class="fa-solid fa-chevron-left"></i></button>
-                            <div class="featured-slider">
-                                <div class="featured-slide">
-                                    <img src="images/ice creams/Ultra-realistic_premium_commer_16.jpg" alt="Vanilla">
-                                    <h4>Vanilla</h4>
-                                    <span class="price">₹25</span>
-                                </div>
-                                <div class="featured-slide">
-                                    <img src="images/ice creams/Ultra-realistic_premium_commer_8.jpg" alt="Chocolate">
-                                    <h4>Chocolate</h4>
-                                    <span class="price">₹25</span>
-                                </div>
-                                <div class="featured-slide">
-                                    <img src="images/ice creams/Ultra-realistic_premium_food_p_12.jpg" alt="Vanilla + Chocolate">
-                                    <h4>Vanilla + Choco</h4>
-                                    <span class="price">₹25</span>
-                                </div>
-                                <div class="featured-slide">
-                                    <img src="images/ice creams/Ultra-realistic_premium_commer_9.jpg" alt="Choco Dip">
-                                    <h4>Choco Dip</h4>
-                                    <span class="price">₹35</span>
-                                </div>
-                                <div class="featured-slide">
-                                    <img src="images/ice creams/Ultra-realistic_premium_commer_1.jpg" alt="With Caramel">
-                                    <h4>With Caramel</h4>
-                                    <span class="price">₹35</span>
-                                </div>
-                            </div>
-                            <button class="slider-arrow right-arrow"><i class="fa-solid fa-chevron-right"></i></button>
+    <!-- Item Showcase Slider Section -->
+    <section id="menu" class="item-showcase-section">
+        <div class="showcase-slider-container">
+            
+            <!-- Slide 1: Ice Creams -->
+            <div class="showcase-slide active fade-effect">
+                <div class="showcase-bg" style="background-image: linear-gradient(rgba(26, 12, 6, 0.8), rgba(26, 12, 6, 0.9)), url('images/featured_icecream.jpg');"></div>
+                <div class="container showcase-content">
+                    <div class="showcase-header fade-up">
+                        <h2>Signature Softy Ice Creams</h2>
+                        <p>Experience the perfect swirl of rich, creamy soft serve made with real dairy and premium ingredients.</p>
+                    </div>
+                    <div class="showcase-grid">
+                        <div class="showcase-item fade-up delay-1">
+                            <img src="images/ice creams/Ultra-realistic_premium_commer_16.jpg" class="showcase-img" alt="Vanilla">
+                            <h3>Vanilla Classic</h3>
+                            <p>Smooth, rich vanilla soft serve.</p>
+                            <span class="price">₹25</span>
                         </div>
-                        <a href="menu.html" class="btn btn-outline" style="margin-top: 20px;">Explore All Items</a>
+                        <div class="showcase-item fade-up delay-2">
+                            <img src="images/ice creams/Ultra-realistic_premium_commer_8.jpg" class="showcase-img" alt="Chocolate">
+                            <h3>Rich Chocolate</h3>
+                            <p>Decadent chocolate swirl.</p>
+                            <span class="price">₹25</span>
+                        </div>
+                        <div class="showcase-item fade-up delay-3">
+                            <img src="images/ice creams/Ultra-realistic_premium_commer_9.jpg" class="showcase-img" alt="Choco Dip">
+                            <h3>Choco Dip</h3>
+                            <p>Dipped in a hard chocolate shell.</p>
+                            <span class="price">₹35</span>
+                        </div>
+                        <div class="showcase-item fade-up delay-4">
+                            <img src="images/ice creams/Ultra-realistic_premium_carame_3.jpg" class="showcase-img" alt="Caramel Sundae">
+                            <h3>Caramel Sundae</h3>
+                            <p>Loaded with thick caramel.</p>
+                            <span class="price">₹50</span>
+                        </div>
                     </div>
                 </div>
             </div>
+
+            <!-- Slide 2: Donuts -->
+            <div class="showcase-slide fade-effect">
+                <div class="showcase-bg" style="background-image: linear-gradient(rgba(40, 20, 10, 0.8), rgba(40, 20, 10, 0.9)), url('images/donuts/Ultra-realistic_premium_commer_2.jpg');"></div>
+                <div class="container showcase-content">
+                    <div class="showcase-header fade-up">
+                        <h2>Freshly Baked Donuts</h2>
+                        <p>Soft, fluffy, and coated in pure joy. Baked fresh every single day.</p>
+                    </div>
+                    <div class="showcase-grid">
+                        <div class="showcase-item fade-up delay-1">
+                            <img src="images/donuts/Ultra-realistic_premium_commer_1.jpg" class="showcase-img" alt="Chocolate Donut">
+                            <h3>Choco Frosted</h3>
+                            <p>Classic ring with rich chocolate frosting.</p>
+                            <span class="price">₹40</span>
+                        </div>
+                        <div class="showcase-item fade-up delay-2">
+                            <img src="images/donuts/Ultra-realistic_premium_commer_6.jpg" class="showcase-img" alt="Sprinkle Donut">
+                            <h3>Rainbow Sprinkles</h3>
+                            <p>Vanilla glaze loaded with rainbow sprinkles.</p>
+                            <span class="price">₹45</span>
+                        </div>
+                        <div class="showcase-item fade-up delay-3">
+                            <img src="images/donuts/Ultra-realistic_premium_commer_7.jpg" class="showcase-img" alt="Filled Donut">
+                            <h3>Cream Filled</h3>
+                            <p>Soft center bursting with sweet cream.</p>
+                            <span class="price">₹50</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 3: Popcorns -->
+            <div class="showcase-slide fade-effect">
+                <div class="showcase-bg" style="background-image: linear-gradient(rgba(20, 10, 5, 0.8), rgba(20, 10, 5, 0.9)), url('images/popcorns/Ultra-realistic_premium_commer_1.jpg');"></div>
+                <div class="container showcase-content">
+                    <div class="showcase-header fade-up">
+                        <h2>Gourmet Popcorn</h2>
+                        <p>Crispy, crunchy, and packed with flavor. The perfect light snack.</p>
+                    </div>
+                    <div class="showcase-grid">
+                        <div class="showcase-item fade-up delay-1">
+                            <img src="images/popcorns/Ultra-realistic_premium_commer_2.jpg" class="showcase-img" alt="Salted Popcorn">
+                            <h3>Classic Salted</h3>
+                            <p>Perfectly popped with premium salt.</p>
+                            <span class="price">₹40</span>
+                        </div>
+                        <div class="showcase-item fade-up delay-2">
+                            <img src="images/popcorns/Ultra-realistic_premium_commer_6.jpg" class="showcase-img" alt="Caramel Popcorn">
+                            <h3>Caramel Crunch</h3>
+                            <p>Coated in sweet, buttery caramel.</p>
+                            <span class="price">₹60</span>
+                        </div>
+                        <div class="showcase-item fade-up delay-3">
+                            <img src="images/popcorns/Ultra-realistic_premium_food_p_8.jpg" class="showcase-img" alt="Cheese Popcorn">
+                            <h3>Cheese Burst</h3>
+                            <p>Loaded with savory cheddar cheese.</p>
+                            <span class="price">₹70</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Navigation Arrows -->
+            <button class="showcase-nav prev-slide"><i class="fa-solid fa-arrow-left"></i></button>
+            <button class="showcase-nav next-slide"><i class="fa-solid fa-arrow-right"></i></button>
+            
+            <div class="showcase-indicators">
+                <span class="indicator active" data-slide="0"></span>
+                <span class="indicator" data-slide="1"></span>
+                <span class="indicator" data-slide="2"></span>
+            </div>
+            
         </div>
         
-        <div class="full-menu-cta container fade-in">
-            <h3>Hungry for more?</h3>
-            <p>From sizzling burgers to crispy popcorn and hot beverages.</p>
+        <div class="full-menu-cta container fade-in" style="margin-top: 40px; margin-bottom: 40px; text-align: center;">
             <a href="menu.html" class="btn">View Full Menu <i class="fa-solid fa-arrow-right" style="margin-left: 8px;"></i></a>
         </div>
     </section>
