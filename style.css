@@ -512,8 +512,8 @@ ul {
 }
 
 .item-thumb {
-    width: 35px;
-    height: 35px;
+    width: 30px;
+    height: 30px;
     border-radius: 5px; /* Slight rounding */
     object-fit: cover;
     margin-right: 12px;
@@ -686,14 +686,14 @@ ul {
 /* Dashboard Layout for Menu Page */
 .menu-dashboard {
     display: flex;
-    gap: 40px;
+    gap: 25px; /* Reduced gap */
     align-items: flex-start;
 }
 
 .dashboard-sidebar {
-    flex: 0 0 280px;
+    flex: 0 0 240px; /* Reduced width */
     background: #fff;
-    padding: 30px 20px;
+    padding: 25px 15px; /* Reduced padding */
     border-radius: 12px;
     box-shadow: 0 10px 40px rgba(59, 32, 20, 0.05);
     position: sticky;
@@ -701,10 +701,10 @@ ul {
 }
 
 .sidebar-title {
-    font-size: 1.2rem;
+    font-size: 1.1rem; /* Slightly smaller */
     color: var(--primary-color);
-    margin-bottom: 20px;
-    padding-bottom: 15px;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
     border-bottom: 2px solid rgba(196, 139, 98, 0.2);
     text-transform: uppercase;
     letter-spacing: 1px;
@@ -716,28 +716,29 @@ ul {
 }
 
 .tab-link {
-    padding: 15px 20px;
-    margin-bottom: 10px;
+    padding: 12px 15px; /* Tighter padding */
+    margin-bottom: 8px;
     border-radius: 8px;
     cursor: pointer;
     font-weight: 600;
+    font-size: 0.95rem; /* Smaller font */
     color: #666;
     transition: all 0.3s ease;
     display: flex;
     align-items: center;
-    gap: 15px;
+    gap: 12px;
 }
 
 .tab-link i {
-    width: 24px;
+    width: 20px;
     text-align: center;
-    font-size: 1.1rem;
+    font-size: 1.05rem;
 }
 
 .tab-link:hover {
     background: rgba(196, 139, 98, 0.08);
     color: var(--primary-color);
-    transform: translateX(5px);
+    transform: translateX(3px);
 }
 
 .tab-link.active {
@@ -768,7 +769,7 @@ ul {
 /* Original Dedicated Menu Grid fallback removed, categories are now dashboard panels */
 .full-menu-category {
     background: #fff;
-    padding: 40px;
+    padding: 30px; /* Reduced padding from 40px */
     border-radius: 12px;
     box-shadow: 0 10px 40px rgba(59, 32, 20, 0.05);
 }
@@ -776,18 +777,18 @@ ul {
 .category-desc {
     text-align: center;
     color: #666;
-    margin-bottom: 30px;
-    font-size: 0.95rem;
-    line-height: 1.6;
-    padding: 0 20px;
+    margin-bottom: 25px;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    padding: 0 10px;
 }
 
 .detailed-list li {
     flex-direction: row;
     align-items: center;
     border-bottom: 1px solid rgba(59,32,20,0.1);
-    padding-bottom: 15px;
-    margin-bottom: 15px;
+    padding-bottom: 12px;
+    margin-bottom: 12px;
 }
 
 .detailed-list li:last-child {
@@ -803,9 +804,9 @@ ul {
 }
 
 .detailed-list .item-name {
-    font-size: 1.15rem;
+    font-size: 1.05rem; /* Smaller font */
     color: var(--primary-color);
-    margin-bottom: 5px;
+    margin-bottom: 4px;
 }
 
 .detailed-list .item-name::after {
@@ -813,17 +814,17 @@ ul {
 }
 
 .item-desc {
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     color: #888;
     font-weight: 400;
-    padding-right: 20px;
+    padding-right: 15px;
 }
 
 .detailed-list .item-price {
-    font-size: 1.3rem;
+    font-size: 1.15rem; /* Reduced from 1.3rem */
     background: #fdfaf7;
-    padding: 10px 15px;
-    border-radius: 8px;
+    padding: 8px 12px; /* Tighter padding */
+    border-radius: 6px;
     color: var(--accent-color);
 }
 
@@ -922,18 +923,20 @@ ul {
         width: 100%;
         position: relative;
         top: 0;
-        margin-bottom: 20px;
-        padding: 20px;
+        margin-bottom: 15px;
+        padding: 15px 10px;
     }
     .dashboard-tabs {
         display: flex;
         overflow-x: auto;
-        padding-bottom: 10px;
-        gap: 10px;
+        padding-bottom: 5px;
+        gap: 8px;
     }
     .tab-link {
         white-space: nowrap;
         margin-bottom: 0;
+        padding: 8px 12px;
+        font-size: 0.9rem;
     }
     
     /* Footer */
