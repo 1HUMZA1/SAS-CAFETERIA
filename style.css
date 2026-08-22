@@ -978,7 +978,7 @@ ul {
 }
 
 /* Responsive */
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
     /* Navbar */
     .logo img {
         height: 50px;
