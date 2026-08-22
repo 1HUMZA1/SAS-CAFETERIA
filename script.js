@@ -50,7 +50,28 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Start typing effect after a small delay
-    setTimeout(type, 500);
+    if (typedTextSpan) setTimeout(type, 500);
+
+    // Typing Effect for Showcase Section
+    const descToType = "Experience the perfect swirl of rich, creamy soft serve made with real dairy and premium ingredients.";
+    const typedDescSpan = document.getElementById("typed-desc");
+    const descCursor = document.querySelector(".desc-cursor");
+    
+    let descCharIndex = 0;
+    
+    function typeDesc() {
+        if (descCharIndex < descToType.length) {
+            if(descCursor && !descCursor.classList.contains("typing")) descCursor.classList.add("typing");
+            if(typedDescSpan) typedDescSpan.textContent += descToType.charAt(descCharIndex);
+            descCharIndex++;
+            setTimeout(typeDesc, 30); // Faster typing speed for description
+        } else {
+            if(descCursor) descCursor.classList.remove("typing");
+        }
+    }
+    
+    // Start description typing effect after a longer delay (when user scrolls down ideally, or just delayed)
+    if (typedDescSpan) setTimeout(typeDesc, 1500);
 
     // Dashboard Tabs Logic
     const tabLinks = document.querySelectorAll('.tab-link');

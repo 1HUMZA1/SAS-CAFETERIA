@@ -205,6 +205,15 @@ ul {
     animation: blink 1s infinite;
     margin-left: 8px;
     box-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    vertical-align: middle;
+}
+
+.desc-cursor {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    margin-left: 5px;
+    vertical-align: baseline;
 }
 
 .cursor.typing {
