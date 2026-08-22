@@ -145,4 +145,36 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
     }
+
+    // Dynamic 3D Tilt Effect for Showcase Items
+    const showcaseItems = document.querySelectorAll('.showcase-item');
+    
+    showcaseItems.forEach(item => {
+        const img = item.querySelector('.showcase-img');
+        
+        item.addEventListener('mousemove', (e) => {
+            const rect = item.getBoundingClientRect();
+            const x = e.clientX - rect.left; // x position within the element.
+            const y = e.clientY - rect.top;  // y position within the element.
+            
+            // Calculate rotation based on mouse position
+            // Max rotation is 20 degrees
+            const xRotation = ((y - rect.height / 2) / rect.height) * -30;
+            const yRotation = ((x - rect.width / 2) / rect.width) * 30;
+            
+            // Apply dynamic tilt and a slight lift/scale
+            if (img) {
+                img.style.transform = `perspective(1000px) translateY(-15px) scale(1.1) rotateX(${xRotation}deg) rotateY(${yRotation}deg)`;
+                img.style.transition = 'transform 0.1s ease-out'; // Quick response for mousemove
+            }
+        });
+        
+        item.addEventListener('mouseleave', () => {
+            // Reset to default on mouse leave
+            if (img) {
+                img.style.transform = ''; 
+                img.style.transition = 'transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275)'; // Smooth return
+            }
+        });
+    });
 });

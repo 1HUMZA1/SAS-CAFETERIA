@@ -376,9 +376,9 @@ ul {
 }
 
 .showcase-item:hover .showcase-img {
-    transform: translateY(-15px) scale(1.1) rotateX(15deg) rotateY(-10deg);
+    transform: translateY(-15px) scale(1.1);
     border-color: var(--accent-color);
-    box-shadow: -15px 30px 40px rgba(0,0,0,0.8), 0 0 25px rgba(212, 163, 115, 0.5);
+    box-shadow: 0 30px 40px rgba(0,0,0,0.8), 0 0 25px rgba(212, 163, 115, 0.5);
 }
 
 .showcase-item h3 {
