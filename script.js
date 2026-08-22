@@ -52,68 +52,6 @@ document.addEventListener('DOMContentLoaded', () => {
     // Start typing effect after a small delay
     setTimeout(type, 500);
 
-    // Menu Carousel Logic
-    const track = document.querySelector('.menu-track');
-    const cards = Array.from(track.children);
-    const nextBtn = document.querySelector('.next-btn');
-    const prevBtn = document.querySelector('.prev-btn');
-    
-    // Check if carousel exists on the page
-    if (track && nextBtn && prevBtn) {
-        let currentIndex = 0;
-        let autoPlayInterval;
-        
-        // Calculate the width to move (card width + gap)
-        // Card is 350px, gap is 30px
-        const getMoveDistance = () => {
-            const cardWidth = cards[0].getBoundingClientRect().width;
-            const style = window.getComputedStyle(track);
-            const gap = parseFloat(style.gap) || 30;
-            return cardWidth + gap;
-        };
-
-        const updateCarousel = () => {
-            const moveDistance = getMoveDistance();
-            track.style.transform = `translateX(-${currentIndex * moveDistance}px)`;
-        };
-
-        const moveToNext = () => {
-            // Check if we reached the end (showing the last complete card)
-            const trackWidth = track.getBoundingClientRect().width;
-            const containerWidth = document.querySelector('.menu-carousel').getBoundingClientRect().width;
-            const maxIndex = cards.length - Math.floor(containerWidth / getMoveDistance());
-            
-            if (currentIndex < maxIndex) {
-                currentIndex++;
-            } else {
-                currentIndex = 0; // Loop back to start
-            }
-            updateCarousel();
-        };
-
-        const moveToPrev = () => {
-            if (currentIndex > 0) {
-                currentIndex--;
-            } else {
-                const containerWidth = document.querySelector('.menu-carousel').getBoundingClientRect().width;
-                currentIndex = cards.length - Math.floor(containerWidth / getMoveDistance());
-            }
-            updateCarousel();
-        };
-
-        // Event listeners for buttons
-        nextBtn.addEventListener('click', () => {
-            moveToNext();
-        });
-
-        prevBtn.addEventListener('click', () => {
-            moveToPrev();
-        });
-        
-        // Handle window resize
-        window.addEventListener('resize', updateCarousel);
-    }
-
     // Dashboard Tabs Logic
     const tabLinks = document.querySelectorAll('.tab-link');
     const dashboardPanels = document.querySelectorAll('.dashboard-panel');
@@ -148,7 +86,9 @@ document.addEventListener('DOMContentLoaded', () => {
             indicators.forEach(ind => ind.classList.remove('active'));
             
             slides[index].classList.add('active');
-            indicators[index].classList.add('active');
+            if(indicators.length > index) {
+                indicators[index].classList.add('active');
+            }
         }
 
         if (nextBtn) {
@@ -171,11 +111,5 @@ document.addEventListener('DOMContentLoaded', () => {
                 showSlide(currentSlide);
             });
         });
-    } });
-        });
-        rightArrow.addEventListener('click', () => {
-            featuredSlider.scrollBy({ left: 140, behavior: 'smooth' });
-        });
     }
-
 });
