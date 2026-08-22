@@ -1123,6 +1123,30 @@ ul {
         border-radius: 20px;
     }
 
+
+    /* Showcase Slider Mobile */
+    .showcase-grid {
+        gap: 15px;
+    }
+    .showcase-item {
+        flex: 0 1 45%; /* Two items per row */
+    }
+    .showcase-img {
+        width: 110px;
+        height: 110px;
+    }
+    .showcase-item h3 {
+        font-size: 1.1rem;
+        margin-bottom: 5px;
+    }
+    .showcase-item p {
+        font-size: 0.8rem;
+        margin-bottom: 5px;
+    }
+    .showcase-item .price {
+        font-size: 1.2rem;
+    }
+
     /* Footer */
     .footer-content {
         flex-direction: column;
