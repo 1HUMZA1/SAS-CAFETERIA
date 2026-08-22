@@ -249,14 +249,14 @@ ul {
 
 .section-header {
     text-align: center;
-    margin-bottom: 80px;
+    margin-bottom: 40px; /* Reduced from 80px */
 }
 
 .section-title {
     font-family: var(--font-heading);
     font-size: 3.5rem;
     color: var(--primary-color);
-    margin-bottom: 20px;
+    margin-bottom: 15px;
     font-weight: 800;
     text-transform: uppercase;
     letter-spacing: 2px;
@@ -264,17 +264,16 @@ ul {
 
 /* Featured Category Section (Home Page) */
 .featured-section-wrapper {
-    padding-top: 120px; /* Clear fixed navbar */
-    padding-bottom: 80px;
+    padding-top: 80px; /* Reduced from 120px */
+    padding-bottom: 50px; /* Reduced from 80px */
 }
 
 .featured-category-card {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    /* Removed background-attachment: fixed to prevent viewport scaling issues */
-    padding: 80px 40px;
-    margin: 40px 0;
+    padding: 50px 20px; /* Reduced from 80px 40px */
+    margin: 20px 0; /* Reduced from 40px 0 */
     position: relative;
     color: #ffffff !important;
     box-shadow: inset 0 0 100px rgba(0,0,0,0.5);
@@ -953,7 +952,7 @@ ul {
 
     /* Featured Section Mobile */
     .featured-category-card {
-        padding: 60px 20px;
+        padding: 40px 15px;
         background-attachment: scroll; /* Fixes background attachment issues on iOS */
     }
     
